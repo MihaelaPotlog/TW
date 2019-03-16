@@ -1,0 +1,60 @@
+body{
+    background-color: rgba(243, 236, 236, 0.76);
+}
+div#alert{
+
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.904);
+    background-color:  rgba(255, 0, 0, 0.815);
+    border-radius: 5px;
+    margin-top: 3%;
+    width: 20em;
+    height: 5em;
+    box-shadow: 3px 5px rgba(148, 148, 148, 0.507);;
+}
+div#alert:hover{
+    background-color:  rgb(189, 0, 0);
+    cursor: pointer;
+}
+div#alert:active{
+    background-color:  rgb(172, 0, 0);
+    cursor: pointer;
+}
+div#alert p#pAlert{
+
+    font-size: 4.2em;
+    margin-left:  auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 0px;
+}
+div#allAlerts{
+    text-align:center;
+    margin-left:auto;
+    margin-right: auto;
+    width: 30%;
+    height: 20em;
+    margin-top: 1%;
+}
+div.alerts{
+    margin:1px;
+    width:40%;
+    height: 45%;
+    text-align:left;
+    display: none; 
+    border-radius: 8px;
+
+}
+div.alerts img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color:rgba(255, 0, 0, 0.815);
+}
+div.alerts img:hover{
+    cursor:pointer;
+    background-color:rgb(189, 0, 0);
+}

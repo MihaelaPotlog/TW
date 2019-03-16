@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Crisis Map</title>
+<link rel="stylesheet" href="crisisMap.css" >
+    </head>
+    <body>
+        <div id='emblem' class='emblem'><img ></div>
+        <div id='login' class='login'><img></div>
+        <div id='alert' class='alert'><p id='pAlert'>ALERT</p></div>
+        <div id='allAlerts' class='allAlerts'>
+        <div id='fire' class='alerts'><img src='fire.png'></div>
+        <div id='person' class='alerts'><img src='person.png'></div>
+        <div id='inundation' class='alerts'><img src='inundation.png'></div>
+        <div id='earthquake' class='alerts'><img src='earthquake.png'></div></div>
+
+
+        
+<script>
+            
+                 allertButton=document.getElementById("alert");
+                 allertButton.addEventListener('click',displayAlerts,false);
+                
+                function displayAlerts(){
+                    //alert('hello');
+                    document.getElementById('alert').style.display="none";
+                    document.getElementById('fire').style.display="inline-block";
+                    document.getElementById('person').style.display="inline-block";     
+                    document.getElementById('inundation').style.display="inline-block";
+                    document.getElementById('earthquake').style.display="inline-block";       
+                }
+
+                fireButton=document.getElementById('fire');
+                personButton=document.getElementById('person');
+                inundationButton=document.getElementById('inundation');
+                earthquakeButton=document.getElementById('earthquake');
+                personButton.addEventListener('click',deleteAlerts,false);
+                fireButton.addEventListener('click',deleteAlerts,false);
+                inundationButton.addEventListener('click',deleteAlerts,false);
+                earthquakeButton.addEventListener('click',deleteAlerts,false);
+
+                function deleteAlerts(){
+                    //alert('hello');
+                    document.getElementById('alert').style.display="flex";
+                    document.getElementById('fire').style.display="none";
+                    document.getElementById('person').style.display="none";     
+                    document.getElementById('inundation').style.display="none";
+                    document.getElementById('earthquake').style.display="none";       
+                }
+</script>
+    </body>
+</html>
