@@ -4,7 +4,9 @@
         <title>Crisis Map</title>
         <link rel="stylesheet" href="crisisMap.css" >
         <link rel="stylesheet" href="AlarmMessage.css">
-        <script src="AlarmMessage.js"></script>
+        <link rel="stylesheet" href="login.css">
+
+
     </head>
     <body>
     
@@ -14,13 +16,33 @@
             <a href="#map" onclick="changePopup()"><img id="mapRef" src="mapicon.png"></a>
             <img id="close" src="close.png">
         </div>
+        <div id="id01" class="modal">
+
+            <form class="modal-content animate" action="Autoritati.html">
+
+
+                <div class="loginbox">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button class="mybutton" type="submit">Login</button>
+
+                </div>
+
+
+            </form>
+        </div>
 
 
         <div id="top">
             <div id='emblem' class='emblem'><img id="logo" onclick="displayPopup()"  src="logo.png" ></div>
 
-            <a href="Autoritati.html">
-                <div id='login' class='login'><img id="logicon" src="close.png"></div></a>
+
+                <div id='login' class='login'><button  class="mybutton" id="logbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                </div>
         </div>
         <div id='alert' class='alert'><p id='pAlert'>ALERT</p></div>
    
@@ -62,37 +84,8 @@
         </div>
 
         
-<script>
-            
-                 allertButton=document.getElementById("alert");
-                 allertButton.addEventListener('click',displayAlerts,false);
-                
-                function displayAlerts(){
-                    //alert('hello');
-                    document.getElementById('alert').style.display="none";
-                    document.getElementById('fire').style.display="inline-block";
-                    document.getElementById('person').style.display="inline-block";     
-                    document.getElementById('inundation').style.display="inline-block";
-                    document.getElementById('earthquake').style.display="inline-block";       
-                }
-
-                fireButton=document.getElementById('fire');
-                personButton=document.getElementById('person');
-                inundationButton=document.getElementById('inundation');
-                earthquakeButton=document.getElementById('earthquake');
-                personButton.addEventListener('click',deleteAlerts,false);
-                fireButton.addEventListener('click',deleteAlerts,false);
-                inundationButton.addEventListener('click',deleteAlerts,false);
-                earthquakeButton.addEventListener('click',deleteAlerts,false);
-
-                function deleteAlerts(){
-                    //alert('hello');
-                    document.getElementById('alert').style.display="flex";
-                    document.getElementById('fire').style.display="none";
-                    document.getElementById('person').style.display="none";     
-                    document.getElementById('inundation').style.display="none";
-                    document.getElementById('earthquake').style.display="none";       
-                }
-</script>
+        <script src="Alerts.js"></script>
+        <script src="AlarmMessage.js"></script>
+        <script src="login.js"></script>
     </body>
 </html>
