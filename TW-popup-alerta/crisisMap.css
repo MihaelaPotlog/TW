@@ -1,0 +1,177 @@
+body{
+    background-color: white;
+}
+div#alert{
+
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.904);
+    background-color:  rgba(255, 0, 0, 0.815);
+    border-radius: 5px;
+    margin-top: 3%;
+    width: 20em;
+    height: 5em;
+    -webkit-box-shadow: -4px -1px 51px 6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px -1px 51px 6px rgba(0,0,0,0.75);
+    box-shadow: -4px -1px 51px 6px rgba(0,0,0,0.75);
+}
+div#alert:hover{
+    background-color:  rgb(189, 0, 0);
+    cursor: pointer;
+    -webkit-box-shadow: -4px -1px 51px 13px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px -1px 51px 13px rgba(0,0,0,0.75);
+    box-shadow: -4px -1px 51px 13px rgba(0,0,0,0.75);
+}
+div#alert:active{
+    background-color:  rgb(172, 0, 0);
+    cursor: pointer;
+}
+div#alert p#pAlert{
+
+    font-size: 4.2em;
+    margin-left:  auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 0px;
+}
+div#allAlerts{
+    text-align:center;
+    margin-left:auto;
+    margin-right: auto;
+    width: 30%;
+    height: 20em;
+    margin-top: 1%;
+    z-index: 999;
+    position: relative;
+}
+div.alerts{
+    margin:1px;
+    width:40%;
+    height: 45%;
+    text-align:left;
+    display: none; 
+    border-radius: 8px;
+}
+div.alerts img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color:rgba(196, 196, 196, 0.63);
+    -webkit-box-shadow: -4px 15px 40px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 15px 40px -1px rgba(0,0,0,0.75);
+    box-shadow: -4px 15px 40px -1px rgba(0,0,0,0.75);
+}
+div.alerts img:hover{
+    cursor:pointer;
+    background-color:rgba(196, 196, 196, 0.795);
+    -webkit-box-shadow: -3px 7px 45px 12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -3px 7px 45px 12px rgba(0,0,0,0.75);
+    box-shadow: -3px 7px 45px 12px rgba(0,0,0,0.75);
+}
+div#safe{
+    width: 40em;
+    height: 10em;
+    border-radius: 5px;
+   /* border: 1px solid rgb(28, 28, 139); */
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    left: 0%;
+    top:  16em;
+    border:1px solid black;
+    margin:0;
+    padding:0;
+
+    
+}
+div#safe ul{
+    margin:0;
+    padding:0;
+}
+div#safe li{
+    list-style: none;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 0;
+    font-size: 1.7em;
+    color:black;
+    text-align: center;
+}
+div#safe li:hover{
+    cursor:pointer;
+    background-color: #dddddd;
+}
+div#safe li:nth-child(even){background-color: #f2f2f2;}
+div#safe li:nth-child(even):hover{background-color: #dddddd;cursor:pointer;}
+div#safe li#status{
+    background-color:black;
+    color:white;
+    padding:0;
+    margin:0;
+}
+
+.flex-container{
+    width: 100%;
+    height:auto;
+
+
+    background-color: bisque;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+
+}
+img#map{
+    height:500px;
+    width: 60%;
+
+}
+
+div#list{
+    width: 40%;
+
+}
+nav ul{
+    height:500px;
+    width: inherit;
+    margin: 0;
+    padding:0;
+    overflow:hidden;
+    overflow-y:scroll;}
+nav ul li {
+    list-style: none;
+    border-bottom: 1px solid black;
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    color:black;
+    text-align: center;
+
+}
+nav ul li:hover{
+    cursor: pointer;
+    background-color: burlywood;
+}
+/* Miha*/
+#logo{
+    width:80px;
+}
+#top{
+    display:flex;
+    justify-content: space-between;
+
+}
+#login{
+
+    width: 40px;
+    height: 40px;
+
+
+}
+
+#logicon{
+    width: inherit;
+    height: inherit;
+    float: right;
+}

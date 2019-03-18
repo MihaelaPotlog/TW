@@ -1,0 +1,148 @@
+
+body {
+    background:url("hd-navy-blue-pictures-wallpaper.jpg");
+}
+
+#logo {
+  margin-bottom: 10px;
+  display: flex;
+  width: 70px;
+  height: 60px;
+  padding:20px 10px;
+}
+
+#logout{
+    float: right;
+    width: 60px;
+    height: 60px;
+    margin-right:13px;
+    opacity: 100;
+}
+footer{
+    font-family: Verdana,Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(54, 84, 102);
+    padding:100px;
+}
+
+.liste {
+    display:flex;
+    justify-content: space-around;
+}
+
+.descriere {
+    background:navajowhite;
+    overflow:auto;
+    height: 350px;
+    width:400px;
+    font-size: larger;
+    font-family:Calibri;
+}
+
+.detalii{
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#map {
+    height: 350px;
+    width: 600px;
+}
+
+.descriere::-webkit-scrollbar{
+    width:10px;
+    background-color: brown;
+
+}
+.descriere::-webkit-scrollbar-thumb{
+
+    background-color: darksalmon;
+
+}
+.descriere::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+
+
+.noi {
+    width:480px;
+    height: 300px;
+    overflow: auto; 
+}
+.noi li{
+    border: 0.5px solid black;
+    background: url("grey-blue.jpg");
+    list-style-type: none;
+    height: 45px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+
+}
+.noi li:hover{
+    background: url("grey-blue-darker.jpg");
+    background-size: cover;
+    cursor: copy;
+}
+
+.noi::-webkit-scrollbar{
+    width:10px;
+    background: url("grey-blue-darker.jpg");
+}
+.noi::-webkit-scrollbar-thumb{
+    background: url("grey-blue-darker.jpg");
+    background-size: cover;
+
+}
+.noi::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+
+
+.desfasurare {
+    width:650px;
+    height: 300px;
+    overflow: auto;
+}
+.desfasurare li{
+    border: 0.5px solid black;
+    background: url("grey-blue.jpg");
+    list-style-type: none;
+    height: 65px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.desfasurare::-webkit-scrollbar{
+    width:10px;
+    background: url("grey-blue-darker.jpg");
+}
+.desfasurare::-webkit-scrollbar-thumb{
+    background: url("grey-blue-darker.jpg");
+    background-size: cover;
+}
+.desfasurare::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+
+section ul {
+    font-size: 1.1em;
+    font-family: "Calibri Light";
+
+}
+
+
+#alerta{
+   width: 180px;
+   height: 70px;
+   font-size: 50px;
+    
+}
+
+
+
