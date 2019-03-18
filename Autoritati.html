@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>CriC</title>
+    <link rel="shortcut icon" type="image/png" href="logo.png">
     <link href="Autoritati.css" rel="stylesheet" type="text/css">
+    <link href="crisisButtons.css" rel="stylesheet" type="text/css">
+    <script src="acceptdecline.js"></script>
 </head>
 <body>
     <header>
-    <img id="logo" src ="logo.jpg" alt="offf:( logo" />
-    <img id="logout" src= "logout.png" alt="offf:( logout" />
+        <img id="logo" src ="logo.png" alt="offf:( logo" />
+        <img id="logout" src= "logout.png" alt="offf:( logout" />
     </header>
 
-   <button id="alerta">Alert</button>
+    <div><img src="ompierdut.png" id="om"></div>
+
+    <div id='alert' class='alert'><p id='pAlert'>ALERT</p></div>
+    <div id='allAlerts' class='allAlerts'>
+        <div id='fire' class='alerts'><img src='fire.png'></div>
+        <div id='person' class='alerts'><img src='person.png'></div>
+        <div id='inundation' class='alerts'><img src='inundation.png'></div>
+        <div id='earthquake' class='alerts'><img src='earthquake.png'></div>
+    </div>
+   
+   
+    
    <section class="liste">
-       <ul class="evenimente noi autoscroll"> 
-           <li> <strong>[Titlu stire 1]</strong>Emergency Type:---
-            Location:---
-            Sender:---
+        <a href="#detalii">
+       
+         <ul class="evenimente noi autoscroll"> 
+           <li> <strong>[Titlu stire 1]</strong>
             Tornadoes ripped across four states amid a severe weather outbreak on Thursday, leaving a trail of damage in their wake. Eighteen tornadoes were reported in total across Kentucky, Indiana, Michigan and Alabama, as well as 156 wind reports and 67 hail reports, according to the National Weather Service (NWS). Damages, including destroyed houses, toppled trees and downed power lines, have been reported as a result of the storm. Over 130,000 electric customers lost power from Michigan through Alabama on Thursday afternoon, and those numbers likely rose into the night as severe weather continued across the region. A state of emergency was declared in McCracken County in western Kentucky after a tornado touched down, according to local news station WPSD. Only one person was hurt with only minor injuries, according to Kentucky State Police. The injury occurred when a large tree was pushed into a home. Four cows were killed. Major structural damage occurred to at least a dozen homes, according to the National Weather Service (NWS) office in Paducah in a public statement.</li>
-            <li><strong>[Titlu stire 2]</strong>Emergency Type:---
-                Location:---
-                Sender:---
+            <li><strong>[Titlu stire 2]</strong>
                 Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
                     leaving a trail of damage in their wake.</li>
             <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
@@ -40,7 +52,8 @@
             <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
                                     leaving a trail of damage in their wake.</li>                               
        </ul>
-
+    </a>
+    <a href="#detalii">
     <ul class="evenimente desfasurare autoscroll">
         <li><strong>[Titlu stire 1]</strong>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
         <li><strong>[Titlu stire 2]</strong>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
@@ -49,9 +62,12 @@
         <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
         <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
     </ul>
+</a>
+
+
    </section>
 
-
+   <a id="detalii">
     <article class="detalii">
 
 
@@ -73,17 +89,61 @@
         Only one person was hurt with only minor injuries, according to Kentucky State Police. The injury occurred when a large tree was pushed into a home. Four cows were killed.
         Major structural damage occurred to at least a dozen homes, according to the National Weather Service (NWS) office in Paducah in a public statement.
             </p>
+           
+            <p id="des"></p>
 
+            
+            <div id="acceptdecline">
+                <button id="accept"  onclick="deleteButton()">Accept </button>
+                <button id="decline"  onclick="deleteButton()">Decline</button>
+            </div>
+           
         </section>
 
         <img id="map" src="Untitled.png" alt="Crisis map">
     </article>
+    </a>
 
     <footer>
         <p>Copyright:  <strong>Autoritati</strong></p>
         <p>Contact: 07XX YYY ZZZ</p>
     </footer>
 
+
+
+<script>
+
+allertButton=document.getElementById("alert");
+allertButton.addEventListener('click',displayAlerts,false);
+
+function displayAlerts(){
+   //alert('hello');
+document.getElementById('alert').style.display="none";
+document.getElementById('fire').style.display="inline-block";
+document.getElementById('person').style.display="inline-block";     
+document.getElementById('inundation').style.display="inline-block";
+document.getElementById('earthquake').style.display="inline-block";       
+}
+
+fireButton=document.getElementById('fire');
+personButton=document.getElementById('person');
+inundationButton=document.getElementById('inundation');
+earthquakeButton=document.getElementById('earthquake');
+personButton.addEventListener('click',deleteAlerts,false);
+fireButton.addEventListener('click',deleteAlerts,false);
+inundationButton.addEventListener('click',deleteAlerts,false);
+earthquakeButton.addEventListener('click',deleteAlerts,false);
+
+function deleteAlerts(){
+   //alert('hello');
+document.getElementById('alert').style.display="flex";
+document.getElementById('fire').style.display="none";
+document.getElementById('person').style.display="none";     
+document.getElementById('inundation').style.display="none";
+document.getElementById('earthquake').style.display="none";       
+}
+
+</script>
 
 </body>
 </html>
