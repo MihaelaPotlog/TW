@@ -153,3 +153,11 @@ nav ul li:hover{
     cursor: pointer;
     background-color: burlywood;
 }
+/* Miha*/
+#logo{
+    width:80px;
+}
+#top{
+    display:flex;
+    justify-content: space-between;
+}
