@@ -32,11 +32,11 @@ a{
     width:150px;
     height: 150px;
     margin-right:150px;
-    margin-top:320px;
+    margin-top:120px;
     cursor:pointer;
     animation: blink 1s;
     animation-iteration-count: infinite;
-    
+
 }
 
 @keyframes blink {
@@ -56,6 +56,9 @@ footer{
     text-align: center;
     color: rgb(54, 84, 102);
     padding:100px;
+    position:absolute;
+    top:1500px;
+    left: 30%;
 }
 
 section ul {
@@ -68,7 +71,11 @@ section ul {
 .liste {
     display:flex;
     justify-content: space-around;
-    margin-bottom: 100px;
+    position: absolute;
+    /* margin-bottom: 100px;
+     margin-top: -100px;*/
+    top: 390px;
+    left:80px;
 }
 
 
@@ -171,7 +178,11 @@ section ul {
     display:flex;
     justify-content: space-around;
     align-items: flex-end;
-    right:70px;
+    top:1000px;
+    position: absolute;
+    left:150px;
+
+
 }
 
 .descriere {
