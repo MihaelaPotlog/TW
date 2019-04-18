@@ -1,9 +1,9 @@
 
 body {
-    background:url("hd-navy-blue-pictures-wallpaper.jpg");
+    background:url("img/hd-navy-blue-pictures-wallpaper.jpg");
 }
 header{
-    background: url("hd-navy-blue-pictures-wallpaper.jpg");
+    background: url("img/hd-navy-blue-pictures-wallpaper.jpg");
     background-size: cover;
     
 }
@@ -102,7 +102,7 @@ section ul {
 }
 .noi li{
     border: 0.5px solid black;
-    background: url("grey-blue.jpg");
+    background: url("img/grey-blue.jpg");
     list-style-type: none;
     height: 60px;
     overflow:hidden;
@@ -112,17 +112,17 @@ section ul {
 
 }
 .noi li:hover{
-    background: url("grey-blue-darker.jpg");
+    background: url("img/grey-blue-darker.jpg");
     background-size: cover;
     cursor: help;
 }
 
 .noi::-webkit-scrollbar{
     width:10px;
-    background: url("grey-blue-darker.jpg");
+    background: url("img/grey-blue-darker.jpg");
 }
 .noi::-webkit-scrollbar-thumb{
-    background: url("grey-blue-darker.jpg");
+    background: url("img/grey-blue-darker.jpg");
     background-size: cover;
 
 }
@@ -161,10 +161,10 @@ section ul {
 
 .desfasurare::-webkit-scrollbar{
     width:10px;
-    background: url("grey-blue-darker.jpg");
+    background: url("img/grey-blue-darker.jpg");
 }
 .desfasurare::-webkit-scrollbar-thumb{
-    background: url("grey-blue-darker.jpg");
+    background: url("img/grey-blue-darker.jpg");
     background-size: cover;
 
 }
