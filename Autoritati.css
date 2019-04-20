@@ -1,10 +1,12 @@
 
 body {
-    background:url("img/hd-navy-blue-pictures-wallpaper.jpg");
+    background:#252830;
 }
 header{
-    background: url("img/hd-navy-blue-pictures-wallpaper.jpg");
+    background:#252830;
     background-size: cover;
+    display:flex;
+    justify-content: space-between;
     
 }
 
@@ -51,15 +53,7 @@ a{
     }
 }
 
-footer{
-    font-family: Verdana,Tahoma, sans-serif;
-    text-align: center;
-    color: rgb(54, 84, 102);
-    padding:100px;
-    position:absolute;
-    top:1500px;
-    left: 30%;
-}
+
 
 section ul {
     font-size: 1.1em;
@@ -75,33 +69,26 @@ section ul {
     /* margin-bottom: 100px;
      margin-top: -100px;*/
     top: 390px;
-    left:80px;
-}
-
-
-#map {
-    height: 470px;
-    width: 650px;
-    margin-right:20px;
-    border-radius: 1%;
-    cursor: zoom-in;
+    
+   padding-right: 2%;
+   padding-left: 2%;
+    height:70%;
+    width:100%;
 }
 
 
 
 .noi {
-    width:600px;
-    height: 500px;
+    width:48%;
+    height: 90%;
+    padding-left: 0%;
     overflow: auto; 
-    margin-left:10px; 
-    margin-right:10px;
-    background:linear-gradient(to right,rgba(28, 78, 68,0.6),rgba(16, 12, 33,0.8));
-    padding: 15px;
+    margin-right: 2%;
     font-size: 20px;
     font-weight: 700;
 }
 .noi li{
-    border: 0.5px solid black;
+/*    border: 0.5px solid black;*/
     background: url("img/grey-blue.jpg");
     list-style-type: none;
     height: 60px;
@@ -133,54 +120,51 @@ section ul {
 
 
 
-
+/*LISTA CU ALERTE IN DESFASURARE*/
 .desfasurare {
-    background:linear-gradient(to right,rgba(28, 78, 68,0.6),rgba(16, 12, 33,0.8));
-    width:600px;
-    height:500px;
+/*    background:linear-gradient(to right,rgba(28, 78, 68,0.6),rgba(16, 12, 33,0.8));*/
+    width:48%;
+    height:90%;
     font-size: 1.4em;
     color:antiquewhite;
     text-align: center;
-    border-radius:2px;
+    border-radius:1.5%;
+    margin-left: 2%;
     overflow: auto;
-    padding: 10px;
-    cursor:help;
+    cursor:cell;
 }
 .desfasurare  li{
-    height:59px;
+    height:12%;
     background:linear-gradient(to right,rgba(63, 165, 191, 0.5),rgba(16, 12, 33,0.8));
-    margin:10px;
     list-style-type:circle;
     overflow:hidden;
+    margin-top: 1%;
+padding-left:   0%;
 }
 
 .desfasurare  li:hover{
     background:rgba(28, 78, 68,0.6);
-    border-radius: 2px;
+    border-radius: 1%;
 }
-
-.desfasurare::-webkit-scrollbar{
-    width:10px;
-    background: url("img/grey-blue-darker.jpg");
+.desfasurare tip-alerta {
+    display:flex;
+    align-items:baseline;
+    font-family: "Roboto";
 }
-.desfasurare::-webkit-scrollbar-thumb{
-    background: url("img/grey-blue-darker.jpg");
-    background-size: cover;
-
-}
-.desfasurare::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: rgba(16, 12, 33,0.8);
-}
+/*SFARSIT LISTA ALERTE IN DESFASURARE*/
 
 
-.detalii{
+
+
+
+#detalii{
     display:flex;
     justify-content: space-around;
     align-items: flex-end;
     top:1000px;
     position: absolute;
-    left:150px;
+    
+    width:100%;
 
 
 }
@@ -188,8 +172,8 @@ section ul {
 .descriere {
     background:linear-gradient(to right,rgba(28, 78, 68,0.6),rgba(16, 12, 33,0.8));
     overflow:hidden;
-    height: 500px;
-    width:400px;
+    height: 100%;
+    width:40%;
     font-size: larger;
     color:honeydew;
     font-family:"Arial";
@@ -198,9 +182,7 @@ section ul {
     cursor:copy;
 
 }
-.descriere #des{
-    margin:10px;
-}
+
 .descriere:hover{
     overflow:auto;
     background:rgba(28, 78, 68,0.6);
@@ -261,4 +243,26 @@ section ul {
 }
 .descriere #des{
     margin:10px;
+}
+
+
+#map {
+    height:600px;
+    width: 50%;
+    
+   
+    border-radius: 1%;
+    cursor: zoom-in;
+}
+
+/*FOOTER*/
+footer{
+    font-family: Verdana,Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(54, 84, 102);
+    padding:100px;
+    position:absolute;
+    top:1500px;
+    bottom:0%;
+    left: 40%;
 }
