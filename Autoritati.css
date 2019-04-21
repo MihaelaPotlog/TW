@@ -31,12 +31,12 @@ a{
 }
 #om{
     position:relative;
-    top:150px;
+    top:100px;
     float: right;
     width:150px;
     height: 150px;
     margin-right:150px;
-    z-index:20;
+    
     cursor:pointer;
     animation: blink 1s;
     animation-iteration-count: infinite;
