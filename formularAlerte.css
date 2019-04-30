@@ -1,0 +1,55 @@
+body {
+    background:#00838f;
+}
+* {
+  box-sizing: border-box;
+}
+#formular {
+    margin:auto;
+    padding:3%;
+    width:80%;
+    height:80%;
+    font-size:calc(2em + 0.5vw);
+   background-color: #DAF7DC;
+    border-radius:1%;
+/*    border-style:solid;*/
+}
+h3 {
+    text-align: center;color: #006064;
+    margin-top:0;
+}
+
+input[type=text],#tip-alerta,#detalii {
+    width:100%;
+    resize:vertical;
+    padding:1%;
+    font-size:1vw;
+}
+input[type=text]:focus,#detalii:focus,#tip-alerta:focus{
+    border: 3px solid ;
+}
+
+#detalii{
+    height:250px;
+}
+
+input[type=submit] {
+    width:20%;
+    margin-top:2%;
+    padding:1%;
+    font-size:80%;
+    text-decoration: none;
+    background-color: #006064;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:2%;
+    float:right;
+}
+input[type=submit]:hover{
+    background-color:#00838f;
+} 
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
