@@ -1,8 +1,8 @@
 body {
-    background:#252830;
+    background:#00838f;
 }
 header{
-    background:#252830;
+    background:#00838f;
     background-size: cover;
     display:flex;
     justify-content: space-between;
@@ -28,36 +28,11 @@ a{
     margin-right:13px;
     cursor: pointer;
 }
-#om{
-    position:relative;
-    top:150px;
-    float:right;
-    width:150px;
-    height:150px;
-    margin-right:150px;
-    z-index:20;
-    cursor:pointer;
-    animation:blink 1s;
-    animation-iteration-count: infinite;
-
-}
-
-@keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.2;
-    }
-    100% {
-        opacity: 1;
-    }
-}
 
 
 .liste ul {
     font-size: 1.1em;
-    font-family: "Calibri Light";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
@@ -83,23 +58,23 @@ a{
     padding-left: 0%;
     overflow: auto; 
     font-size: 20px;
-    font-weight: 700;
     margin-right: 2%;
     margin-left: 3%;
 }
 .noi li{
 /*    border: 0.5px solid black;*/
-    background: url("img/grey-blue.jpg");
+    background: #B2EBF2;
     list-style-type: none;
     height: 60px;
     overflow:hidden;
     text-overflow: ellipsis;
     margin-bottom:5px;
     margin-top: 5px;
+    color:rgb(9, 40, 51);
 
 }
 .noi li:hover{
-    background: url("img/grey-blue-darker.jpg");
+    background: #00838f;
     background-size: cover;
     cursor: help;
 }
@@ -126,21 +101,22 @@ a{
     width:90%;
     height: 30em;
     font-size: 1.4em;
-    color:antiquewhite;
+    color:black;
     text-align: center;
-    border-radius:1.5%;
     overflow: auto;
     cursor:cell;
-    margin-right: 2%;
+    margin-right: 0%;
     padding:0%;
 }
 .desfasurare  li{
     height:12%;
-    background:linear-gradient(to right,rgba(63, 165, 191, 0.5),rgba(16, 12, 33,0.8));
+    background: #B2EBF2;
+    color:rgb(9, 40, 51);
     list-style-type:circle;
     overflow:hidden;
     margin-top: 1%;
     padding-left: 0%;
+
 }
 
 .desfasurare  li:hover{
@@ -173,29 +149,23 @@ a{
 }
 
 .descriere {
-    background:linear-gradient(to right,rgba(28, 78, 68,0.6),rgba(16, 12, 33,0.8));
-    overflow:hidden;
-    width:40%;
-    height: 30em;
+    background: #B2EBF2;
+    overflow: auto;
+    width:30%;
+    height: 28em;
     font-size: larger;
-    color:honeydew;
-    font-family:"Arial";
+    color:rgb(9, 40, 51);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     border-radius:5px;
     margin-left: 3%;
     padding-left: 0%;
     cursor:copy;
+    padding:4%;
 
 }
 
-.descriere:hover{
-    overflow:auto;
-    background:rgba(28, 78, 68,0.6);
-    letter-spacing:2px;
-}
 
-.descriere ul li{
-    letter-spacing:3px;
-}
+
 .descriere::-webkit-scrollbar{
     width:10px;
     background-color: rgba(16, 12, 33,0.8);
@@ -252,7 +222,7 @@ a{
 
 #map {
     width:50%;
-    height: 35em;
+    height: 40em;
     border-radius: 1%;
     cursor: zoom-in;
 }
@@ -272,25 +242,35 @@ footer{
 .container1,.container2{
     display: block;
     width: 100%;
+    background: #E0F7FA;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.container1{
+    margin-right:1%;
+    margin-left:2%;
+}
+.container2{
+    padding-left:4%;
+    margin-right: 2.5%;
+}
+
 .container1 .news{
     width:90%;
-    height:3em;
     display: flex;
     justify-content: center;
-    font-size: 1.5em;
-    font-weight: 700;
+    font-weight: 500;
     margin-right: 2%;
     margin-left: 3%;
-    background:white;
+    font-size: 2em;
+    color: #006064; 
 }
 .container2 .ongoing{
     width:90%;
-    height: 3em;
-    font-size: 1.5em;
-    font-weight: 700;
-    background:antiquewhite;
+    font-size: 2em;
+    font-weight: 500;
     text-align: center;
-    border-radius:1.5%;
     margin-right: 3%;
+    color:#006064;   
+
 }
