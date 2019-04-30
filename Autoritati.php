@@ -15,7 +15,7 @@
         <ul class="navList">
             <li><img id="logo" src ="img/logo.png" alt="offf:( logo" /></li>
             <li id="out" style="float:right"><a href="crisisMap.html"><img id="logout" src= "img/logout.png" alt="offf:( logout" /></a></li>    
-            <li id="declare" style="float:right"><a href="">Declare a missing person</a></li>
+            <li id="declare" style="float:right"><a href="formular-disparitii.html">Declare a missing person</a></li>
             <li id="missing" style="float:right"><a href="">Missing persons</a></li>            
         </ul>
    

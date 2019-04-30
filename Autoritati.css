@@ -1,13 +1,6 @@
 body {
     background:#00838f;
 }
-header{
-    background:#00838f;
-    background-size: cover;
-    display:flex;
-    justify-content: space-between;
-    
-}
 
 a{
     cursor: auto;
