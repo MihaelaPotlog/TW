@@ -7,16 +7,30 @@ body {
 #formular {
     margin:auto;
     padding:3%;
-    width:80%;
-    height:80%;
-    font-size:calc(2em + 0.5vw);
+    width:65%;
+   color:#6B0F1A;
    background-color: #DAF7DC;
     border-radius:1%;
-/*    border-style:solid;*/
+    box-shadow:-4px -1px 40px 1px rgba(0,0,0,0.35);
+   
+    font-family: "Calibri";
+
+
+
 }
-h3 {
-    text-align: center;color: #006064;
+form{
+        
+font-size:1.5em;
+    font-weight:bold;
+   
+  
+
+}
+h1 {
+    text-align: center;
     margin-top:0;
+    font-size:2.5em;
+    
 }
 
 input[type=text],#tip-alerta,#detalii {
@@ -24,9 +38,11 @@ input[type=text],#tip-alerta,#detalii {
     resize:vertical;
     padding:1%;
     font-size:1vw;
+    
 }
 input[type=text]:focus,#detalii:focus,#tip-alerta:focus{
     border: 3px solid ;
+    cursor:pointer;
 }
 
 #detalii{
@@ -36,10 +52,10 @@ input[type=text]:focus,#detalii:focus,#tip-alerta:focus{
 input[type=submit] {
     width:20%;
     margin-top:2%;
-    padding:1%;
+    padding:1.5%;;
     font-size:80%;
     text-decoration: none;
-    background-color: #006064;
+    background-color: red;
     border:none;
     color:white;
     cursor:pointer;
@@ -47,9 +63,10 @@ input[type=submit] {
     float:right;
 }
 input[type=submit]:hover{
-    background-color:#00838f;
+    background-color:darkred;
 } 
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
 }
+
