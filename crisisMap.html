@@ -51,17 +51,28 @@
         <div id='person' class='alerts'><img src='img/person.png' alt="person"></div>
         <div id='inundation' class='alerts'><img src='img/inundation.png' alt="inundation"></div>
         <div id='earthquake' class='alerts'><img src='img/earthquake.png' alt="earthquake"></div></div>
-        <div id='safe' class='safe'>
-            <ul>
-                <li id='status'>YOUR STATUS</li>
-                <li>A fire is comming</li>
-                <li>You are in danger ! </li>
-                <li>Please go somewhere safe ! </li>
-                <li id='last'>Follow the instructions ! </li>
-            </ul>
+        <div id='status' class='status'>
+          <p class='status' id='safeDanger'>You are safe ! </p>
+        </div>
+        <div id='customsearchdiv' class='customsearchdiv'>
+        <p id='customsearch' class='customsearch'>Select what you want to see</p></div>
+        <div id="custom" class="custom">
+          <form class='form' id='form'>
+              <select><option value='yourarea'>Your area</option>
+                      <option value='all'>All</option></select>
+              <select>
+                      <option value='fire'>Fire</option>
+                      <option value='persons'>Persons</option>
+                      <option value='inundations'>Inundations</option>
+                      <option value='earthquake'>Earthquakes</option>
+              </select>
+              <input type="submit" value="Search" />
+          </form>
         </div>
         <div class="flex-container">
-            <img id="map" src="img/mapa.png" alt="img">
+            <iframe id="map" 
+            src="http://www.google.org/crisismap/weather_and_events?hl=en&amp;llbox=57.81%2C7.74%2C-25.35%2C-160.35&amp;t=TERRAIN&amp;layers=30%2C1%2C31%2C32%2C1340721332252%3A49%2C20%2C12%2Clayer9%2C2&amp;embedded=true"
+             style="border: 1px solid #ccc"></iframe>
             <div id="list">
                 <nav>
                     <ul>
