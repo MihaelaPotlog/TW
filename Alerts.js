@@ -8,6 +8,7 @@ function displayAlerts(){
     document.getElementById('person').style.display="inline-block";
     document.getElementById('inundation').style.display="inline-block";
     document.getElementById('earthquake').style.display="inline-block";
+    document.getElementById('status').style.display="none";
 }
 
 fireButton=document.getElementById('fire');
@@ -26,4 +27,5 @@ function deleteAlerts(){
     document.getElementById('person').style.display="none";
     document.getElementById('inundation').style.display="none";
     document.getElementById('earthquake').style.display="none";
+    document.getElementById('status').style.display="block";
 }
