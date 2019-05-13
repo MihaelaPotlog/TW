@@ -1,0 +1,1 @@
+<alert xmlns="urn:oasis:names:tc:emergency:cap:1.2"><identifier>llllllllll</identifier><sender/><sent/><status>Actual</status><scope>Public</scope><info><category>Geo</category><event>FIRE</event><urgency>Immediate</urgency><severity>Extreme</severity><certainty>Observed</certainty><description> </description><area><areaDesc/><circle/></area></info></alert>

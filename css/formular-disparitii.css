@@ -1,0 +1,82 @@
+body {
+    background:#00838f;
+}
+
+
+.form-box{
+    display: flex;
+    margin: 30%;
+    margin-top:5%;
+    width: 40%;
+    height: auto;
+    padding: 3%;
+    background: #E0F7FA;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    color: #006064; 
+    box-shadow: -4px -1px 40px 1px rgba(0,0,0,0.75);
+    
+}
+.form-box p{
+    font-size:1.3em;
+    font-weight: 800;
+}
+input, select,textarea{
+    display: block;
+    justify-content: center;
+ 
+}
+
+button {
+    width: auto;
+    height: auto;
+    padding: 2%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1em;
+    color:#fff;
+    background-color:#006064;
+    border-color:#006064;
+    cursor: pointer;
+}
+hr{
+    margin-right: 30%;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+
+
+#logo {
+    width: 60px;
+    height: 60px;
+  }
+.navList{
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+}
+.navList li{
+    float:left;
+}
+.navList li a{
+    display: block;
+    background: #00838f;
+    padding: 0.8em;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 1.5em;
+}
+.navList li a:hover{
+    letter-spacing: 1px;
+    color: rgb(194, 216, 241);
+}
+
+#logout{
+    width: 30px;
+    height: 30px;
+}

@@ -1,7 +1,7 @@
 <?php
 $xml = file_get_contents('php://input');
 
-$file = fopen('formData.xml', 'r+');
+$file = fopen('formData.xml', 'w+');
 fwrite($file, $xml);
 fclose($file);
 

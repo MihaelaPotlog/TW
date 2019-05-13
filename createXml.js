@@ -78,7 +78,7 @@ function sendToServer(CAP) {
 	const serializer = new XMLSerializer();
 	const xmlString = serializer.serializeToString(CAP);
 	const xhr = new XMLHttpRequest();
-	xhr.open('POST', 'formProcessor.php', true);
+	xhr.open('POST', 'fusionTable.php', true);
 	xhr.setRequestHeader('Content-Type', 'text/xml');
 	xhr.send(xmlString);
 	console.log('sent');

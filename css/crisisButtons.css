@@ -1,0 +1,69 @@
+div#alert {
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	color: rgba(0, 0, 0, 0.904);
+	background-color: rgba(255, 0, 0, 0.808);
+	border-radius: 5px;
+	margin-top: 3%;
+	width: 20em;
+	height: 5em;
+	-webkit-box-shadow: -4px -1px 51px 6px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -4px -1px 51px 6px rgba(0, 0, 0, 0.75);
+	box-shadow: -4px -1px 51px 6px rgba(0, 0, 0, 0.75);
+}
+div#alert:hover {
+	background-color: rgb(189, 0, 0);
+	cursor: pointer;
+	-webkit-box-shadow: -4px -1px 51px 13px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -4px -1px 51px 13px rgba(0, 0, 0, 0.75);
+	box-shadow: -4px -1px 51px 13px rgba(0, 0, 0, 0.75);
+}
+div#alert:active {
+	background-color: rgb(172, 0, 0);
+	cursor: pointer;
+}
+div#alert p#pAlert {
+	font-size: 4.2em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 0px;
+}
+div#allAlerts {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	height: 35em;
+	margin-top: 1%;
+	z-index: 999;
+	position: relative;
+	display: none;
+}
+div.alerts {
+	margin: 1px;
+	width: 40%;
+	height: 45%;
+	text-align: left;
+	display: none;
+	border-radius: 8px;
+}
+div.alerts img {
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+	background-color: rgba(196, 196, 196, 0.815);
+	-webkit-box-shadow: -4px 15px 40px -1px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -4px 15px 40px -1px rgba(0, 0, 0, 0.75);
+	box-shadow: -4px 15px 40px -1px rgba(0, 0, 0, 0.75);
+	display: inline-block;
+}
+div.alerts img:hover {
+	cursor: pointer;
+	background-color: rgba(196, 196, 196, 0.795);
+	-webkit-box-shadow: -3px 7px 45px 12px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -3px 7px 45px 12px rgba(0, 0, 0, 0.75);
+	box-shadow: -3px 7px 45px 12px rgba(0, 0, 0, 0.75);
+}
