@@ -12,9 +12,7 @@ $client->setApplicationName("CriC");
 $client->setScopes('https://www.googleapis.com/auth/fusiontables');
 
  
-
-$tableId="1fO6ILpUkHJnrVL_6Bzcs3ifuyQgnUnjEuHmv3dVe";
-
+$tableId="1t88h2rQ-TYF7J-z3lgvHpIvL5IhgLGc3dPapj5YS";
   $xml = file_get_contents('php://input');
   $file = fopen('formData.xml', 'w+');
   fwrite($file, $xml);
@@ -44,11 +42,11 @@ $xmlDoc->load("formData.xml");
 $sqlInsert=" ('identifier', 'sender' , 'sent', 'status' , 
              'scope', 'category', 'event', 'urgency' , 
              'severity' , 'certainty'  , 'description' , 
-             'areaDesc' , 'latitude' , 'longitude') 
+             'areaDesc' , 'latitude' , 'longitude' , 'type') 
               VALUES( ' $identifier', '$sender' , '$sent', '$status' , 
              '$scope', '$category', '$event', '$urgency' , 
              '$severity' , '$certainty'  , '$description' , 
-             '$areaDesc' , '$coordinates[0]' , '$coordinates[1]' )";
+             '$areaDesc' , '$coordinates[0]' , '$coordinates[1]' , 'new' )";
 
 
 $service->query->sql("INSERT INTO " . $tableId . $sqlInsert );
