@@ -1,8 +1,8 @@
 <?php
+<?php
+require_once 'vendor\autoload.php';
 
-require_once '..\vendor\autoload.php';
-
-putenv('GOOGLE_APPLICATION_CREDENTIALS=..\cric-240015-02a9bceaefa0.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\xampp\htdocs\TW\cric-240015-02a9bceaefa0.json');
 $client = new Google_Client();
 
 $service=new Google_Service_Fusiontables($client);
@@ -14,8 +14,8 @@ $client->setScopes('https://www.googleapis.com/auth/fusiontables');
 
  
 
-$tableId="1t88h2rQ-TYF7J-z3lgvHpIvL5IhgLGc3dPapj5YS";
-$queryResult= $service->query->sql("SELECT * FROM 1t88h2rQ-TYF7J-z3lgvHpIvL5IhgLGc3dPapj5YS");
+$tableId="1GkupWsLva9DRgE4GMVJdPurGsP1egPo1mmzG5OQE";
+$queryResult= $service->query->sql("SELECT * FROM $tableId");
 $rows=$queryResult->getRows();
 var_dump($rows);
 echo $rows;

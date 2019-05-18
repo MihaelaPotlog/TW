@@ -1,9 +1,9 @@
 <!--acest Script creaza un tabel asociat CONTULUI APLICATIEI-->
-
+<!--//$tableId='1hP2xK_XQVRz5DlvHHUCt3z6kizml-a8hKIexrmOM';-->
 <?php
-require_once '..\vendor\autoload.php';
+require_once 'vendor\autoload.php';
 
-putenv('GOOGLE_APPLICATION_CREDENTIALS=..\cric-240015-02a9bceaefa0.json');
+putenv('GOOGLE_APPLICATION_CREDENTIALS=C:\xampp\htdocs\TW\cric-240015-02a9bceaefa0.json');
 $client = new Google_Client();
 
 $service=new Google_Service_Fusiontables($client);
@@ -17,7 +17,7 @@ $client->setScopes('https://www.googleapis.com/auth/fusiontables');
 
  $columns =  array('identifier' => 'STRING', 'sender' => 'STRING','sent' => "DATETIME", 'status' => 'STRING' , 'scope' => 'STRING'
                   , 'category' => 'STRING' , 'event' => 'STRING' , 'urgency' => 'STRING' , 'severity' => 'STRING' 
-                  , 'certainty' => 'STRING' , 'description' => 'STRING' , 'areaDesc' => 'STRING' , 'latitude' => 'STRING' , 'longitude' => 'STRING', 'type'=>'STRING');
+                  , 'certainty' => 'STRING' , 'description' => 'STRING' , 'areaDesc' => 'STRING' , 'latitude' => 'STRING' , 'longitude' => 'STRING');
     $tableColumns = array();
     foreach ($columns as $columnName => $columnType) {
             $column = new Google_Service_Fusiontables_Column();
@@ -33,7 +33,6 @@ $client->setScopes('https://www.googleapis.com/auth/fusiontables');
  $response=$service->table->insert($table);
  $tableId=$response->tableId;
 echo "ID:  " . $tableId;
-//1t88h2rQ-TYF7J-z3lgvHpIvL5IhgLGc3dPapj5YS
 
 
 ?>
