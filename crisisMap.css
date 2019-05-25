@@ -205,3 +205,10 @@ table.google-visualization-table-table{
 	display: none;
 	
 }
+.google-visualization-table-td{
+     background: red;
+}
+/*
+td{
+    background: red;
+}*/

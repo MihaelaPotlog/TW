@@ -33,48 +33,14 @@
 
    <div class="liste">
 
-        <div class="container1">
+        <div id="container1">
        
          <p class="news">New alerts</p>
-         <ul class="evenimente noi "> 
-            <li> <strong>[Titlu stire 1]</strong>Tornadoes ripped across four states amid a severe weather outbreak on Thursday, leaving a trail of damage in their wake. Eighteen tornadoes were reported in total across Kentucky, Indiana, Michigan and Alabama, as well as 156 wind reports and 67 hail reports, according to the National Weather Service (NWS). Damages, including destroyed houses, toppled trees and downed power lines, have been reported as a result of the storm. Over 130,000 electric customers lost power from Michigan through Alabama on Thursday afternoon, and those numbers likely rose into the night as severe weather continued across the region. A state of emergency was declared in McCracken County in western Kentucky after a tornado touched down, according to local news station WPSD. Only one person was hurt with only minor injuries, according to Kentucky State Police. The injury occurred when a large tree was pushed into a home. Four cows were killed. Major structural damage occurred to at least a dozen homes, according to the National Weather Service (NWS) office in Paducah in a public statement.</li>
-            <li>
-               <a href="#detalii"><strong>[Titlu stire 2]</strong>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                    leaving a trail of damage in their wake.
-                </a>
-            </li>
-            <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                    leaving a trail of damage in their wake.</li>
-            <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                        leaving a trail of damage in their wake.</li>
-            <li> Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                            leaving a trail of damage in their wake.</li>
-            <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                            leaving a trail of damage in their wake.</li>
-            <li> Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                                leaving a trail of damage in their wake.</li>
-            <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                                leaving a trail of damage in their wake.</li> 
-            <li> Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                                    leaving a trail of damage in their wake.</li>
-            <li>Tornadoes ripped across four states amid a severe weather outbreak on Thursday,
-                                    leaving a trail of damage in their wake.</li>                               
-       </ul>
-    </div>
-    <div class="container2">
+        
+        </div>
+    <div id="container2">
         <p class="ongoing">Ongoing alerts</p>
-         <ul class="evenimente desfasurare ">
-            <li><a href="#detalii"><strong>[Titlu stire 1]</strong>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph.</a> </li>
-            <li><strong>[Titlu stire 2]</strong>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-            <li>At 940 PM CDT, a severe thunderstorm capable of producing a tornado is located near Lake Wedowee, moving east at 30 mph. </li>
-        </ul>
+        
     </div>
 
      </div> <!--liste -->
@@ -129,6 +95,11 @@
 
   <script src="acceptdecline.js"></script>
   <script src="Alerts.js"></script>
+  <script src="loadLists.js"></script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+               <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvT7bqGyLH8goeR-FCp_kmFieGoWjgUFY&callback=initMap"
+        ></script>
 </body>
 
 </html>
