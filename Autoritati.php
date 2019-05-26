@@ -95,11 +95,12 @@
 
   <script src="acceptdecline.js"></script>
   <script src="Alerts.js"></script>
-  <script src="loadLists.js"></script>
+
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         
-               <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvT7bqGyLH8goeR-FCp_kmFieGoWjgUFY&callback=initMap"
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkW7jzRa0yN5JlAwuHgdxSViRHEQURFy0&callback=initMap"
         ></script>
+    <script src="loadLists.js"></script>
 </body>
 
 </html>
