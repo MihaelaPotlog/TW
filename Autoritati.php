@@ -11,14 +11,14 @@
 </head>
 <body>
     
-    
+    <div class="navbar">
         <ul class="navList">
             <li><img id="logo" src ="img/logo.png" alt="offf:( logo" /></li>
             <li id="out" style="float:right"><a href="crisisMap.html"><img id="logout" src= "img/logout.png" alt="offf:( logout" /></a></li>    
             <li id="declare" style="float:right"><a href="formular-disparitii.html">Declare a missing person</a></li>
             <li id="missing" style="float:right"><a href="">Missing persons</a></li>            
         </ul>
-   
+   </div>
     <div id='alert' class='alert'><p id='pAlert'>ALERT</p></div>
     
     <div id='allAlerts' class='allAlerts'>
@@ -34,16 +34,16 @@
    <div class="liste">
 
         <div id="container1">
-       
-         <p class="news">New alerts</p>
-        
+            <a href="#detalii" id="aa1">
+            </a>
         </div>
-    <div id="container2">
-        <p class="ongoing">Ongoing alerts</p>
-        
-    </div>
+       
+        <div id="container2">
+            <a href="#detalii" id="aa2">
+            </a>
+        </div>
 
-     </div> <!--liste -->
+    </div> <!--liste -->
  
 
 
@@ -91,16 +91,52 @@
     </footer>
 
 
-
-
   <script src="acceptdecline.js"></script>
   <script src="Alerts.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvT7bqGyLH8goeR-FCp_kmFieGoWjgUFY&callback=initMap">  </script>
+  <script src="AlertsOnMap.js"></script>
+    
+    <script>
 
-     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         
-     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkW7jzRa0yN5JlAwuHgdxSViRHEQURFy0&callback=initMap"
-        ></script>
-    <script src="loadLists.js"></script>
+     google.charts.load("current", {packages:['table']});
+     google.charts.setOnLoadCallback(drawVisualization1);
+ 
+
+    function drawVisualization1() {
+      var data=google.visualization.drawChart({
+        "containerId": "aa1",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query":"SELECT 'description' as 'New alerts' FROM " +
+                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE type='new'",
+        "refreshInterval": 0,
+        "chartType": "Table",
+        "options": {}
+     });
+        
+    }
+        
+    
+     google.charts.load("current", {packages:['table']});
+     google.charts.setOnLoadCallback(drawVisualization2);
+ 
+        
+    function drawVisualization2() {
+      var data=google.visualization.drawChart({
+        "containerId": "aa2",
+        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
+        "query":"SELECT 'description' as 'On going alerts' FROM " +
+                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE type='ongoing'",
+        "refreshInterval": 0,
+        "chartType": "Table",
+        "options": {}
+     });
+    }    
+
+        
+    </script>
+    
 </body>
 
 </html>
