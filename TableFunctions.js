@@ -66,11 +66,31 @@ function selectEvents() {
 	console.log('am apasat');
 	var iasiLocation = { lat: 47.158455, lng: 27.601442 };
 	map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: iasiLocation });
-	const varAlerte = getTableElements();
-	const eventType = document.getElementById('selectoptions').value;
-	const fsQuery =
+	var varAlerte = getTableElements();
+	var eventType = document.getElementById('selectoptions').value;
+	var eventZone= document.getElementById('selectzone').value;
+	if(eventZone == "all"){
+		if(eventType=="all"){
+			var fsQuery =
+			"SELECT 'event' as 'Tipul alertei','description','latitude','longitude' FROM 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff";
+		}
+		else{
+	var fsQuery =
 		"SELECT 'event' as 'Tipul alertei','description','latitude','longitude' FROM 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE event=" +
-		eventType;
+		"'" + eventType + "'";}}
+    if(eventZone == "yourarea"){
+		//alert("hellyaaaaa");
+		//alert(iasiLocation.lat + 0.5);alert(iasiLocation.lng + 0.5);
+		if(eventType=="all"){
+			var fsQuery =
+			"SELECT 'event' as 'Tipul alertei','description','latitude','longitude' FROM 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE "
+			+ "latitude>=" + (iasiLocation.lat-0.5) + " and latitude<=" + (iasiLocation.lat+0.5)
+		+ " and longitude>=" + (iasiLocation.lng-0.5) + " and longitude<=" + (iasiLocation.lng+0.5);
+		}else{
+		var fsQuery = "SELECT 'event' as 'Tipul alertei','description','latitude','longitude' FROM 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE event=" +
+		"'" + eventType +"'" + " and latitude>=" + (iasiLocation.lat-0.5) + " and latitude<=" + (iasiLocation.lat+0.5)
+		+ " and longitude>=" + (iasiLocation.lng-0.5) + " and longitude<=" + (iasiLocation.lng+0.5);
+	}}
 
 	var data = google.visualization.drawChart({
 		containerId: 'list',
@@ -84,9 +104,9 @@ function selectEvents() {
 	var alertName;
 	for (i = 0; i < varAlerte.length; i = i + 4) {
 		alertName = varAlerte[i];
-		if (alertName == eventType) {
+		//if (alertName == eventType) {
 			var coords = { lat: Number(varAlerte[i + 2]), lng: Number(varAlerte[i + 3]) };
 			addMarker(alertName, coords);
-		}
+		//}
 	}
 }
