@@ -31,7 +31,7 @@
                     <input type="password" placeholder="Enter Password"  required>
 
                     <button class="mybutton" type="submit">Login</button>
-
+                    <button class="mybutton" type="button" id="closebtn">Close</button>
                 </div>
 
 
@@ -43,7 +43,7 @@
             <div id='emblem' class='emblem'><img id="logo" onclick="displayPopup()"  src="img/logo.png" alt="logo" ></div>
 
 
-                <div id='login' class='login'><button  class="mybutton" id="logbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                <div id='login' class='login'><button  class="mybutton" id="logbutton" style="width:auto;">Login</button>
                 </div>
         </div>
         <div id='alert' class='alert'><p id='pAlert'>ALERT</p></div>
@@ -66,11 +66,11 @@
                       <option value='all'>All</option></select>
               <select id='selectoptions'>
                   
-                      <option value='all' id='all'>All</option>
-                      <option value='fire' id='fire'>Fire</option>
-                      <option value='persons' id='persons'>Persons</option>
-                      <option value='inundations' id='inundations'>Inundations</option>
-                      <option value='earthquakes' id='earthquakes'>Earthquakes</option>
+                      <option value='all' >All</option>
+                      <option value='FIRE' >Fire</option>
+                      <option value='PERSON' >Persons</option>
+                      <option value='TORNADO' >Inundations</option>
+                      <option value='EARTHQUAKE' >Earthquakes</option>
               </select>
               <button id='submit' >Search</button>
             </div>
@@ -90,227 +90,12 @@
         <script src="Alerts.js"></script>
         <script src="AlarmMessage.js"></script>
         <script src="login.js"></script>
-        <script src="AlertsOnMap.js"></script>
+     
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script>
-        // Initialize and add the map
-        var allOk=0;
-        var vectorAlerte=new Array();
-    function initMap() {
-    var iasiLocation = {lat: 47.158455, lng: 27.601442}; //aici poate fi inlocuit cu adresa actuala a userului
-    var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 12, center: iasiLocation}); // aici poate fi inlocuit cu adresa userului
-
-    function addMarker(alertType,coords){
-        var alert;
-        if(alertType=='Fire'){
-        alert='img/fires.png';
-        }
-        if(alertType=='Person'){
-            alert='img/persons.png';
-        }
-        if(alertType == 'Inundation')
-        {
-            alert='img/inundations.png';
-        }
-        if(alertType == 'Earthquake'){
-            alert='img/earthquakes.png';
-        }
-        var marker = new google.maps.Marker({
-            position:coords,
-            map:map,
-            icon:alert});
-            marker.setMap(map);
-    }
-    
-
-
-    google.charts.load("current", {packages:['table']});
-    google.charts.setOnLoadCallback(drawVisualization);
-    
-     
-    function drawVisualization() {
-      var data=google.visualization.drawChart({
-        "containerId": "list",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'category' as 'Tipul alertei','description','latitude','longitude' FROM " +
-                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff",
-        "refreshInterval": 0,
-        "chartType": "Table",
-        "options": {}
-     });
-    }    
-   //addMarker('Fire',{lat:47.158455, lng: 27.5801442});
-    //addMarker('Person',{lat:47.158455, lng: 27.701442});
-   function afisareTabelAlerte(){
-     map = new google.maps.Map(
-     document.getElementById('map'), {zoom: 12, center: iasiLocation});
-       if(allOk==0){
-       var i;
-       for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i++){
-       vectorAlerte[i]=document.getElementsByClassName("google-visualization-table-td")[i].innerHTML;
-       //alert(vectorAlerte[i]);
-       }
-       allOk++;
-    }
-     //alert(document.getElementsByClassName("google-visualization-table-td").length);
-   if(document.getElementById('selectoptions').value=='fire'){
-   var data=google.visualization.drawChart({
-        "containerId": "list",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'category' as 'Tipul alertei','description','latitude','longitude' FROM " +
-                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE AlertType='Fire'",
-        "refreshInterval": 0,
-        "chartType": "Table",
-        "options": {}
-     });
-     var i;
-     var alertName;
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];
-     if(alertName=='Fire') {
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);}
-     }}
-     if(document.getElementById('selectoptions').value=='persons'){
-   var data=google.visualization.drawChart({
-        "containerId": "list",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'category' as 'Tipul alertei','description','latitude','longitude' FROM " +
-                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE AlertType='Person'",
-        "refreshInterval": 0,
-        "chartType": "Table",
-        "options": {}
-     });     var i;
-     var alertName;
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];
-     if(alertName=='Person') {
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);}
-     }}
-     if(document.getElementById('selectoptions').value=='earthquakes'){
-   var data=google.visualization.drawChart({
-        "containerId": "list",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'category' as 'Tipul alertei','description',latitude','logitude' FROM " +
-                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE AlertType='Earthquake'",
-        "refreshInterval": 0,
-        "chartType": "Table",
-        "options": {}
-     });     var i;
-     var alertName;
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];
-     if(alertName=='Earthquake') {
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);}
-     }}
-   if(document.getElementById('selectoptions').value=='inundations'){
-   var data=google.visualization.drawChart({
-        "containerId": "list",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'category' as 'Tipul alertei','description','latitude','longitude' FROM " +
-                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE AlertType='Inundation'",
-        "refreshInterval": 0,
-        "chartType": "Table",
-        "options": {}
-     });    
-      var i;
-     var alertName;
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];
-     if(alertName=='Inundation') {
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);}
-     }}
-     if(document.getElementById('selectoptions').value=='all'){
-   var data=google.visualization.drawChart({
-        "containerId": "list",
-        "dataSourceUrl": "//www.google.com/fusiontables/gvizdata?tq=",
-        "query":"SELECT 'category' as 'Tipul alertei','description','latitude','longitude' FROM " +
-                "15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff",
-        "refreshInterval": 0,
-        "chartType": "Table",
-        "options": {}
-     });     var i;
-     var alertName;
-    // alert(vectorAlerte[0]);
-    // alert(vectorAlerte[4]);
-    // alert(vectorAlerte[8]);
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];  
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);
-     }}
-   }
-    var submitButton=document.getElementById('submit');
-    submitButton.addEventListener("click",afisareTabelAlerte,false);
-     /*
-     //fusion table id :	1CyNY17D44fZ5ceHUe-GDm4B-zfRpvkexoWD6uH-t
-     
-     var layer = new google.maps.FusionTablesLayer({
-     
-     query: {
-      select: 'AlertType',
-      from: '1CyNY17D44fZ5ceHUe-GDm4B-zfRpvkexoWD6uH-t'
-     // where: 'Longitude=27.701442' https://www.google.com/fusiontables/DataSource?docid=1CyNY17D44fZ5ceHUe-GDm4B-zfRpvkexoWD6uH-t
-     
-     }
-     });
-     alert(layer.Latitude);
-     */
-
-
-  }//end initMap function
-/*
-   //  alert(document.getElementsByClassName("google-visualization-table-td")[8].innerHTML);
-   //  alert(document.getElementsByClassName("google-visualization-table-td")[10].innerHTML);//parsez si memorez pe alerte tot  tabelul dupa ce se afiseza TOT MEREU
-     //alert(document.getElementsByClassName("google-visualization-table-td")[11].innerHTML);
-  //   if(document.getElementById('selectoptions').value=='all'){
-     /*var alertName =document.getElementsByClassName("google-visualization-table-td")[8].innerHTML;
-     var coords={lat:Number(document.getElementsByClassName("google-visualization-table-td")[10].innerHTML),lng:Number(document.getElementsByClassName("google-visualization-table-td")[11].innerHTML)};
-     alert(alertName);
-     alert(coords.lat);
-     alert(coords.lng);*/
-     //addMarker("Earthquake",{lat:47.258,lng:27.601});
-     //map = new google.maps.Map(
-     //document.getElementById('map'), {zoom: 12, center: iasiLocation});
-   /*  var i;
-     var alertName;
-     alert(vectorAlerte[0]);
-     alert(vectorAlerte[4]);
-     alert(vectorAlerte[8]);
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];  
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);
-     }
-    // addMarker(alertName,coords);
-     }*/
-     // if(document.getElementById('selectoptions').value=='fire'){
-     /*var alertName =document.getElementsByClassName("google-visualization-table-td")[8].innerHTML;
-     var coords={lat:Number(document.getElementsByClassName("google-visualization-table-td")[10].innerHTML),lng:Number(document.getElementsByClassName("google-visualization-table-td")[11].innerHTML)};
-     alert(alertName);
-     alert(coords.lat);
-     alert(coords.lng);*/
-     //addMarker("Earthquake",{lat:47.258,lng:27.601});
-    // map = new google.maps.Map(
-     //document.getElementById('map'), {zoom: 12, center: iasiLocation});
-    /* var i;
-     var alertName;
-     for(i=0;i<document.getElementsByClassName("google-visualization-table-td").length;i=i+4){
-     alertName=vectorAlerte[i];
-     if(alertName=='Fire') {
-     var coords={lat:Number(vectorAlerte[i+2]),lng:Number(vectorAlerte[i+3])};
-     addMarker(alertName,coords);}
-     }
-    // addMarker(alertName,coords);
-     }*/
-
-        </script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvT7bqGyLH8goeR-FCp_kmFieGoWjgUFY&callback=initMap"
+         
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBkW7jzRa0yN5JlAwuHgdxSViRHEQURFy0&callback=initMap"
         ></script>
+        <script src="TableFunctions.js"></script>
         
     </body>
 </html>
