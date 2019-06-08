@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Login.php';
+require_once 'app\models\Login.php';
 $controller = new Login();
 $username = $_POST['username'];
 $pass = $_POST['pass'];
