@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +25,7 @@
     </div>
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" action="app\controllers\loginController.php" method="POST">
+        <form class="modal-content animate" action="login-submit" method="POST">
 
 
             <div class="loginbox">
@@ -46,6 +49,7 @@
         <div>
 
             <?php
+
             if (isset($_SESSION['err'])) {
                 echo $_SESSION['err'];
                 unset($_SESSION['err']);
