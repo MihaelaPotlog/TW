@@ -1,0 +1,281 @@
+body {
+    background:#00838f;
+}
+
+a{
+    cursor: auto;
+    text-decoration: none;
+    color: black;
+}
+
+/* start NAVBAR */
+
+#logo {
+  width: 60px;
+  height: 60px;
+}
+.navList{
+    list-style-type: none;
+    margin:0;
+    margin-bottom: 5em;
+    padding: 0;
+    overflow: hidden;
+}
+.navList li{
+    float:left;
+}
+.navList li a{
+    display: block;
+    background: #00838f;
+    padding: 0.8em;
+    text-align: center;
+    cursor: pointer;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size: 1.5em;
+}
+.navList li a:hover{
+    letter-spacing: 1px;
+    color: rgb(194, 216, 241);
+}
+
+#logout{
+    width: 30px;
+    height: 30px;
+}
+
+/*stop NAVBAR*/
+
+
+
+.liste {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    position: absolute;
+    margin-bottom: 3%;
+    margin-top: -3%;
+    top: 390px;
+    height:auto;
+    width:100%;
+}
+
+
+
+
+#detalii{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    position: absolute;
+    margin-top: 3%;
+    height:auto;
+    width:auto;
+    top:70em;
+
+}
+
+.descriere {
+    background: #B2EBF2;
+    overflow: auto;
+    width:30%;
+    height: 28em;
+    font-size: larger;
+    color:rgb(9, 40, 51);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius:5px;
+    margin-left: 3%;
+    padding-left: 0%;
+    cursor:copy;
+    padding:4%;
+
+}
+
+
+#acceptdecline{
+
+    display:flex;
+    justify-content: space-around;
+    align-items:flex-end;
+
+}
+#accept,#decline{
+    height:4em;
+    width:8em;
+    border-radius: 10%;
+    text-align:center;
+    letter-spacing: 2px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+    font-weight: 1000;
+    cursor:pointer;
+}
+
+#accept{
+    background-color: rgba(44, 192, 68, 0.6);
+}
+#decline{
+    background-color: rgb(197, 40, 40);
+}
+#accept:hover{
+    background-color:rgba(36, 139, 53, 0.6)
+}
+#decline:hover{
+    background-color:rgb(155, 26, 26)
+}
+.descriere #des{
+    margin:10px;
+}
+
+
+#map {
+    width:50%;
+    height: 40em;
+    border-radius: 1%;
+    cursor: zoom-in;
+}
+
+/*FOOTER*/
+footer{
+    font-family: Verdana,Tahoma, sans-serif;
+    text-align: center;
+    color: rgb(54, 84, 102);
+    padding:100px;
+    position:absolute;
+    top:110em;
+    bottom:0%;
+    left: 40%;
+}
+
+div#container1,div#container2{
+    display: block;
+    width: 40em;
+    height: 100%;
+    background: #E0F7FA;
+    box-shadow: -4px -1px 40px 1px rgba(0,0,0,0.75);
+    margin:1em;
+}
+
+
+
+/*div.google-visualization-table{*/
+	/*height: 500px;*/
+	/*width: 100%;*/
+    /*overflow: auto;*/
+    /**/
+    /**/
+    /**/
+/*}*/
+
+/*table.google-visualization-table-table{*/
+	/*height: 500px;*/
+	/*width: 100%;*/
+	/*font-size: 1.2em;*/
+    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
+    /**/
+
+    /**/
+/*}*/
+/*.google-visualization-table-type-number{*/
+	/*display: none;*/
+
+/*}*/
+
+/*td.google-visualization-table-td{*/
+    /*background: #B2EBF2;*/
+    /*overflow: hidden;*/
+    /*color:rgb(9, 40, 51);*/
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    /**/
+/*}*/
+/*td.google-visualization-table-td:hover{*/
+    /*background: rgba(185, 249, 255, 0.49);*/
+    /*cursor: pointer;*/
+    /**/
+/*}*/
+/*th.google-visualization-table-th{*/
+    /*background: #B2EBF2;*/
+    /*color:rgb(9, 40, 51);*/
+    /*font-size: 1.4em;*/
+/*}*/
+
+/*HIDDEN CELLS*/
+th.identifier{
+    display:none;
+}
+/*
+
+.noi {
+    width:90%;
+    height: 30em;
+    padding-left: 0%;
+    overflow: auto; 
+    font-size: 20px;
+    margin-right: 2%;
+    margin-left: 3%;
+}
+.noi li{
+    border: 0.5px solid black;
+    background: #B2EBF2;
+    list-style-type: none;
+    height: 60px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    margin-bottom:5px;
+    margin-top: 5px;
+    color:rgb(9, 40, 51);
+
+}
+.noi li:hover{
+    background: #00838f;
+    background-size: cover;
+    cursor: help;
+}
+*/
+
+
+
+/*LISTA CU ALERTE IN DESFASURARE*/
+/*
+.desfasurare {
+    background:linear-gradient(to right,rgba(28, 78, 68,0.6),rgba(16, 12, 33,0.8));
+    width:90%;
+    height: 30em;
+    font-size: 1.4em;
+    color:black;
+    text-align: center;
+    overflow: auto;
+    cursor:cell;
+    margin-right: 0%;
+    padding:0%;
+}
+.desfasurare  li{
+    height:12%;
+    background: #B2EBF2;
+    color:rgb(9, 40, 51);
+    list-style-type:circle;
+    overflow:hidden;
+    margin-top: 1%;
+    padding-left: 0%;
+
+}
+
+.desfasurare  li:hover{
+    background:rgba(28, 78, 68,0.6);
+    border-radius: 1%;
+}
+*/
+
+
+
+/*SFARSIT LISTA ALERTE IN DESFASURARE*/
+
+
+
+
+

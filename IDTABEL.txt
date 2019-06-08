@@ -1,1 +1,7 @@
 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff
+
+
+curl -X POST -H 'Content-type: application/xml' --data-binary @pfif.xml \     https://www.google.org/personfinder/test/api/write?key=43HxMWGBijFaYEr5
+
+
+https://www.google.org/personfinder/test/feeds/person?key=43HxMWGBijFaYEr5
