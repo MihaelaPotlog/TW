@@ -13,7 +13,7 @@
 
             <label for="tipalerta">Emergency Type:</label>
             <input type="text" name="tipalerta" id="event" class="textField" value="<?php $tipalerta = $_GET['tipalerta'];
-                                                                                    echo $tipalerta; ?>" ; disabled />
+                                                                                    echo $tipalerta; ?>" ; />
 
             <label for="identifier">Identifier</label>
             <input type="text" name="identifier" class="textField" id="identifier">
@@ -30,11 +30,11 @@
             <label for="sent">Sent at:</label>
             <input type="text" id="sent" class="textField" placeholder="YYYY-mm-DD T hour:minute:second">
 
-            <div class="selectContainer" style="display:none">
+            <div class="selectContainer">
                 <div> <label for="status">Status:</label>
 
                     <select name="statusopt" id="status">
-                        <option selected value="Actual">Actual</option>
+                        <option value="Actual">Actual</option>
                         <option value="Exercise">Exercise</option>
                         <option value="System">System</option>
                         <option value="Test">Test</option>
@@ -45,7 +45,7 @@
                 <div>
                     <label for="msgType">Nature of the alert message:</label>
                     <select name="msgTypeOpt" id="msgType">
-                        <option selected value="Alert">Alert</option>
+                        <option value="Alert">Alert</option>
                         <option value="Update">Update</option>
                         <option value="Cancel">Cancel</option>
                     </select>
@@ -57,7 +57,7 @@
                         <option value="Met"> Meteorological (inc. flood)</option>
                         <option value="Rescue"> Rescue and recovery</option>
                         <option value="Fire">Fire suppression and rescue</option>
-                        <option selected value="Other">Other events</option>
+                        <option value="Other">Other events</option>
                     </select>
                 </div>
                 <div>
@@ -66,7 +66,7 @@
                         <option value="Immediate">Responsive action SHOULD be taken immediately</option>
                         <option value="Expected"> Responsive action SHOULD be taken soon (within next hour)</option>
                         <option value="Future"> Responsive action SHOULD be taken in the near future</option>
-                        <option selected value="Unknown">Urgency not known</option>
+                        <option value="Unknown">Urgency not known</option>
                     </select>
                 </div>
                 <div>
@@ -76,7 +76,7 @@
                         <option value="Severe">Significant threat to life or property</option>
                         <option value="Moderate"> Possible threat to life or property</option>
                         <option value="Minor"> Minimal to no known threat to life or property</option>
-                        <option selected value="Unknown">Severity unknown</option>
+                        <option value="Unknown">Severity unknown</option>
                     </select>
                 </div>
                 <div>
@@ -86,7 +86,7 @@
                         <option value="Likely">Likely</option>
                         <option value="Possible">Possible</option>
                         <option value="Unlikely">Unlikely</option>
-                        <option selected value="Unknown">Unknown</option>
+                        <option value="Unknown">Unknown</option>
                     </select>
                 </div>
 
@@ -100,9 +100,9 @@
 
 
             <br>
-            <div id="submitBtn"> <a href="crisismap"> Back</a></div>
-            <input id="submitBtn" type="submit" name="send" value="SEND" />
 
+            <input id="submitBtn" type="submit" name="send" value="SEND" />
+            <div id="submitBtn"> <a href="Autoritati"> Back</a></div>
             <br>
 
         </form>
