@@ -110,7 +110,7 @@
     </div>
 
 
-    <script src="../controllers/createXml.js"></script>
+    <script src="../app/controllers/createXml.js"></script>
 </body>
 
 </html>
