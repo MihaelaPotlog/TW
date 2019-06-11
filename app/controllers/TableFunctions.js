@@ -1,27 +1,31 @@
 var varAlerte = new Array();
-let userPoz = {
+let userPoz = { //adresa user
 	lat: '',
 	lng: ''
 };
 function getLocation() {
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(showPosition);
-		console.log(userPoz);
+		//console.log(userPoz);
 	} else {
-		console.log('geo error');
+		//console.log('geo error');
 	}
 }
 
 function showPosition(position) {
-	userPoz.lat = position.coords.latitude;
-	userPoz.lng = position.coords.longitude;
+	//userPoz.lat = position.coords.latitude;
+	//userPoz.lng = position.coords.longitude;
+	//alert(position.coords.latitude);
+	//alert(position.coords.longitude);
+	userPoz.lat=position.coords.latitude;
+	userPoz.lng=position.coords.longitude;
 }
-
+getLocation();
 function initMap() {
-	getLocation();
+	//getLocation();
 	console.log(userPoz);
-	var iasiLocation = { lat: 47.158455, lng: 27.601442 }; //aici poate fi inlocuit cu adresa actuala a userului
-	var map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: iasiLocation });
+	var userLocation = { lat: userPoz.lat, lng: userPoz.lng }; //aici poate fi inlocuit cu adresa actuala a userului = userPoz
+	var map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: userLocation });
 	google.charts.load('current', { packages: [ 'table' ] });
 	google.charts.setOnLoadCallback(drawVisualization);
 	google.charts.setOnLoadCallback(selectEvents);
@@ -61,12 +65,10 @@ function getTableElements() {
 	}
 	return vectorAlerte;
 }
-
 function selectEvents() {
 	console.log('am apasat');
-	var iasiLocation = { lat: 47.158455, lng: 27.601442 };
-	map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: iasiLocation });
-	var varAlerte = getTableElements();
+	var userLocation = { lat: 47.158455, lng: 27.601442 };
+	map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: userLocation });
 	var eventType = document.getElementById('selectoptions').value;
 	var eventZone= document.getElementById('selectzone').value;
 	if(eventZone == "all"){
@@ -80,19 +82,19 @@ function selectEvents() {
 		"'" + eventType + "'";}}
     if(eventZone == "yourarea"){
 		//alert("hellyaaaaa");
-		//alert(iasiLocation.lat + 0.5);alert(iasiLocation.lng + 0.5);
+		//alert(userLocation.lat + 0.5);alert(userLocation.lng + 0.5);
 		if(eventType=="all"){
 			var fsQuery =
 			"SELECT 'event' as 'Tipul alertei','description','latitude','longitude' FROM 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE "
-			+ "latitude>=" + (iasiLocation.lat-0.5) + " and latitude<=" + (iasiLocation.lat+0.5)
-		+ " and longitude>=" + (iasiLocation.lng-0.5) + " and longitude<=" + (iasiLocation.lng+0.5);
+			+ "latitude>=" + (userLocation.lat-0.5) + " and latitude<=" + (userLocation.lat+0.5)
+		+ " and longitude>=" + (userLocation.lng-0.5) + " and longitude<=" + (userLocation.lng+0.5);
 		}else{
 		var fsQuery = "SELECT 'event' as 'Tipul alertei','description','latitude','longitude' FROM 15MEqfjavoIeOtMKTm49ndOQ_LxmYzY0vKeMjGZff WHERE event=" +
-		"'" + eventType +"'" + " and latitude>=" + (iasiLocation.lat-0.5) + " and latitude<=" + (iasiLocation.lat+0.5)
-		+ " and longitude>=" + (iasiLocation.lng-0.5) + " and longitude<=" + (iasiLocation.lng+0.5);
+		"'" + eventType +"'" + " and latitude>=" + (userLocation.lat-0.5) + " and latitude<=" + (userLocation.lat+0.5)
+		+ " and longitude>=" + (userLocation.lng-0.5) + " and longitude<=" + (userLocation.lng+0.5);
 	}}
 
-	var data = google.visualization.drawChart({
+	    google.visualization.drawChart({
 		containerId: 'list',
 		dataSourceUrl: '//www.google.com/fusiontables/gvizdata?tq=',
 		query: fsQuery,
@@ -100,6 +102,8 @@ function selectEvents() {
 		chartType: 'Table',
 		options: {}
 	});
+	setTimeout(function(){
+	var varAlerte = getTableElements();
 	var i;
 	var alertName;
 	for (i = 0; i < varAlerte.length; i = i + 4) {
@@ -107,6 +111,8 @@ function selectEvents() {
 		//if (alertName == eventType) {
 			var coords = { lat: Number(varAlerte[i + 2]), lng: Number(varAlerte[i + 3]) };
 			addMarker(alertName, coords);
-		//}
+	//	}
 	}
+	}, 2000);
+
 }
