@@ -1,27 +1,54 @@
-function displayDescription(){
-    document.getElementById("type").innerHTML="Emergency Type:---";
-    document.getElementById("location").innerHTML="Location:---";
-    document.getElementById("sender").innerHTML="Sender:---";
-    document.getElementById("des").innerHTML="Tornado in Shiawassee County had EF-2 damage with winds up to 125 mph";
 
-
-}
-
-
-function giveAcceptDecline(){
-    displayDescription();
-    document.getElementById("accept").style.backgroundColor="#4391DF";
-    document.getElementById("accept").innerHTML="Accept";
-    document.getElementById("decline").innerHTML="Decline";
-    document.getElementById("decline").style.backgroundColor="#BE0D21";
-
-
-
-}
-
+document.getElementById("overlay").addEventListener("click",function(){
+    this.style.display="none";
+    deleteAlerts();
+});
 function deleteButton(){
-    document.getElementById("acceptdecline").style.display="none";
+
     document.getElementById("accept").style.display="none";
     document.getElementById("decline").style.display="none";
+    document.getElementById("resolved").style.display="none";
+    console.log("stergs");
 
 }
+document.getElementById("tbody-new").addEventListener("click", function (e) {
+    let target=e.target;
+
+    document.getElementById("accept").style.display="flex";
+    document.getElementById("decline").style.display="flex";
+    document.getElementById("resolved").style.display = "none";}
+);
+document.getElementById("tbody-ongoing").addEventListener("click", function (e) {
+         let target=e.target;
+
+        document.getElementById("resolved").style.display = "flex";
+    document.getElementById("accept").style.display="none";
+    document.getElementById("decline").style.display="none";
+});
+function eraseAlertDescription(id) {
+
+    deleteButton();
+    document.getElementById("accept").style.display = "none";
+    document.getElementById("decline").style.display = "none";
+    document.getElementById("resolved").style.display = "none";
+
+        document.getElementById("description").textContent="";
+         let details=document.getElementById("detail-list").childNodes;
+        for(let index=0;index<details.length;index++)
+            details[index].textContent="";
+
+
+
+        if(id==="resolved")
+        {   document.getElementById("description").textContent="Situatia de urgenta a fost rezolvata!";
+             document.getElementById("description").style.color="green";}
+
+
+
+}
+
+
+
+eraseAlertDescription("accept");
+eraseAlertDescription("decline");
+eraseAlertDescription("resolved");

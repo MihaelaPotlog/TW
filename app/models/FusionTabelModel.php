@@ -55,7 +55,10 @@ class FusionTabelModel
     function deleteAlert()
     {
         $identifier = file_get_contents('php://input');
-
+        $xml = file_get_contents('php://input');
+        $file = fopen('formData.txt', 'w');
+        fwrite($file,$identifier);
+        fwrite($file,"jk");
         $sql = "DELETE from $this->tableId WHERE identifier='$identifier' ";
 
         $this->service->query->sql($sql);
@@ -64,7 +67,7 @@ class FusionTabelModel
     function modifyType(){
         $identifier = file_get_contents('php://input');
 
-        $sql = "UPDATE $this->tableId SET state='ongoing' WHERE identifier='$identifier' ";
+        $sql = "UPDATE $this->tableId SET type='ongoing' WHERE identifier='$identifier'";
 
         $this->service->query->sql($sql);
     }
@@ -85,19 +88,39 @@ class FusionTabelModel
 
 
     }
+    function giveIdentifiedAlert(){
+        $identifier=file_get_contents('php://input');
+        $file = fopen('formData.txt', 'w');
+        fwrite($file, $identifier);
+
+//        fwrite($file, "grr");
+        $queryResult=$this->service->query->sql("SELECT * FROM $this->tableId where identifier='$identifier'");
+        $alert=$queryResult->getRows();
+
+        $response['status']=200;
+        $response['status_message']="ok";
+        $response['data']=$alert;
+        $json_response = json_encode($response);
+        echo $json_response;
+
+    }
 
 }
 
 $fusionTable=new FusionTabelModel();
-switch($_GET["request"]) {
-    case "alerts":
-        $fusionTable->giveAlerts();
-        break;
-    case "insert":
-        $fusionTable->insertAlert();
-        break;
 
-}
+if($_GET["request"]=="alerts")
+        $fusionTable->giveAlerts();
+    else if($_GET["request"]=="insert")
+        $fusionTable->insertAlert();
+    else if($_GET["request"]== "identifiedAlert")
+        $fusionTable->giveIdentifiedAlert();
+    else if($_GET["request"]=="modify")
+        $fusionTable->modifyType();
+    else if($_GET["request"]=="delete")
+        $fusionTable->deleteAlert();
+
+
 
 
 ?>
