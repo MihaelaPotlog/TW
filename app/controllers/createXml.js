@@ -1,3 +1,27 @@
+var varAlerte = new Array();
+let userPoz = {
+	//adresa user
+	lat: '',
+	lng: ''
+};
+function getLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+		//console.log(userPoz);
+	} else {
+		//console.log('geo error');
+	}
+}
+
+function showPosition(position) {
+	//userPoz.lat = position.coords.latitude;
+	//userPoz.lng = position.coords.longitude;
+	//alert(position.coords.latitude);
+	//alert(position.coords.longitude);
+	userPoz.lat = position.coords.latitude;
+	userPoz.lng = position.coords.longitude;
+}
+getLocation();
 const formular = document.getElementById('formAutoritati');
 formular.addEventListener('submit', createXml);
 
@@ -8,7 +32,7 @@ function createXml(e) {
 	alert.setAttribute('xmlns', 'urn:oasis:names:tc:emergency:cap:1.2');
 
 	const identifier = CAP.createElement('identifier');
-	identifier.innerHTML = document.getElementById('identifier').value;
+	identifier.innerHTML = Math.random().toString(36).substr(2, 9);
 	alert.appendChild(identifier);
 
 	const sender = CAP.createElement('sender');
@@ -62,7 +86,8 @@ function createXml(e) {
 	area.appendChild(areaDesc);
 
 	const circle = CAP.createElement('circle');
-	circle.innerHTML = document.getElementById('circle').value;
+	circle.innerHTML = `${userPoz.lat},${userPoz.lng}`;
+	console.log(circle);
 	area.appendChild(circle);
 
 	info.appendChild(area);

@@ -15,8 +15,7 @@
             <input type="text" name="tipalerta" id="event" class="textField" value="<?php $tipalerta = $_GET['tipalerta'];
                                                                                     echo $tipalerta; ?>" ; disabled />
 
-            <label for="identifier">Identifier</label>
-            <input type="text" name="identifier" class="textField" id="identifier">
+
 
             <label for="location">Location:</label>
             <input type="text" name="location" id="areaDesc" class="textField" placeholder="Complete if the emergency is not in your area!" />
@@ -24,8 +23,7 @@
             <label for="sender">Your Name:</label>
             <input type="text" id="sender" class="textField" name="sender">
 
-            <label for="coordinates">Coordinates:</label>
-            <input type="text" id="circle" class="textField" placeholder="lat,long">
+
 
             <label for="sent">Sent at:</label>
             <input type="text" id="sent" class="textField" placeholder="YYYY-mm-DD T hour:minute:second">
