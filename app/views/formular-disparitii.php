@@ -52,8 +52,8 @@
             <label for="your-name"> Name of complainant </label>
             <input type="text" id="your-name" name="yourname" placeholder="Enter your name">
             <br>
-            <label for="contact">address missing person</label>
-            <textarea id="contact" name="adress"></textarea>
+            <label for="adress">address of missing person</label>
+            <textarea id="adress" name="adress"></textarea>
             <br>
 
 

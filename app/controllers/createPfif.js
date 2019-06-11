@@ -10,7 +10,7 @@ function createPfif(e) {
 	const place = document.getElementById('place').value;
 	const socialMedia = document.getElementById('social-media').value;
 	const timeRegistration = document.getElementById('time-registration').value;
-	const yourName = document.getElementById('yourname').value;
+	const yourName = document.getElementById('your-name').value;
 	const adress = document.getElementById('adress').value;
 	const extra = document.getElementById('extra').value;
 
@@ -89,12 +89,10 @@ function createPfif(e) {
 }
 
 function sendToServer(Pfif) {
-	const serializer = new XMLSerializer();
-	const xmlString = serializer.serializeToString(Pfif);
 	const xhr = new XMLHttpRequest();
-	xhr.open('POST', '../app/models/FusionTabelModel.php?request=insert', true);
-	xhr.setRequestHeader('Content-Type', 'text/xml');
-	xhr.send(xmlString);
+	xhr.open('POST', 'https://www.google.org/personfinder/test/api/write?key=43HxMWGBijFaYEr5', true);
+	xhr.setRequestHeader('Content-Type', 'application/xml');
+	xhr.send(Pfif);
 	console.log('sent');
 	formular.reset();
 }
