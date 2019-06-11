@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: mihaela
@@ -26,5 +27,11 @@ Route::set("formular-disparitii", function () {
 
 Route::set("formularAlerte", function () {
     $controller = new formularAlerte();
+    $controller->index();
+});
+
+Route::set("autoritati-logout", function () {
+    unset($_SESSION['is_logged']);
+    $controller = new CrisisMap();
     $controller->index();
 });
