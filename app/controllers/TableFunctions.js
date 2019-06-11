@@ -1,4 +1,5 @@
 var varAlerte = new Array();
+var safeDanger=0;
 let userPoz = { //adresa user
 	lat: '',
 	lng: ''
@@ -21,11 +22,12 @@ function showPosition(position) {
 	userPoz.lng=position.coords.longitude;
 }
 getLocation();
+var map;
 function initMap() {
 	//getLocation();
 	console.log(userPoz);
-	var userLocation = { lat: userPoz.lat, lng: userPoz.lng }; //aici poate fi inlocuit cu adresa actuala a userului = userPoz
-	var map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: userLocation });
+	var userLocation = { lat: userPoz.lat, lng: userPoz.lng }; // = userPoz
+	map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: userLocation });
 	google.charts.load('current', { packages: [ 'table' ] });
 	google.charts.setOnLoadCallback(drawVisualization);
 	google.charts.setOnLoadCallback(selectEvents);
@@ -67,7 +69,7 @@ function getTableElements() {
 }
 function selectEvents() {
 	console.log('am apasat');
-	var userLocation = { lat: 47.158455, lng: 27.601442 };
+	var userLocation = { lat: userPoz.lat, lng: userPoz.lng }; //	var userLocation = { lat: 47.158455, lng: 27.601442 };
 	map = new google.maps.Map(document.getElementById('map'), { zoom: 12, center: userLocation });
 	var eventType = document.getElementById('selectoptions').value;
 	var eventZone= document.getElementById('selectzone').value;
@@ -111,8 +113,26 @@ function selectEvents() {
 		//if (alertName == eventType) {
 			var coords = { lat: Number(varAlerte[i + 2]), lng: Number(varAlerte[i + 3]) };
 			addMarker(alertName, coords);
+
+			if(userLocation.lat-0.5<=coords.lat && userLocation.lat+0.5>=coords.lat && userLocation.lng-0.5<=coords.lng && userLocation.lng+0.5>=coords.lng ){
+				document.getElementById('status').style.backgroundColor="red";
+				document.getElementById('safeDanger').innerHTML="You are in danger !";
+		}
 	//	}
 	}
 	}, 2000);
-
-}
+}  
+elementFromTableClick=document.getElementsByClassName("google-visualization-table-td");
+elementFromTableClick=document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement,
+		text = target.textContent || target.innerText;
+		if(text=="FIRE" || text=="EARTHQUAKE" || text=="INUNDATION" || text=="TORNADO"){
+			var alertLocation={lat:target.nextSibling.nextSibling.innerText,lng:target.nextSibling.nextSibling.nextSibling.innerText};
+			//alert(alertLocation.lat);
+			//alert(alertLocation.lng);
+			//google.maps.Map(document.getElementById('map').setCenter(alertLocation));
+			gMap = map;
+			gMap.setZoom(15);      // This will trigger a zoom_changed on the map
+			gMap.setCenter(new google.maps.LatLng(alertLocation.lat,alertLocation.lng));}
+}, false);
