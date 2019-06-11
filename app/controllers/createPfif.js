@@ -13,6 +13,7 @@ function createPfif(e) {
 	const yourName = document.getElementById('your-name').value;
 	const adress = document.getElementById('adress').value;
 	const extra = document.getElementById('extra').value;
+	console.log(extra);
 
 	const Pfif = document.implementation.createDocument('', '', null);
 	const header = Pfif.createElement('pfif:pfif');
@@ -21,7 +22,7 @@ function createPfif(e) {
 	const person = Pfif.createElement('pfif:person');
 
 	const recordId = Pfif.createElement('pfif:person_record_id');
-	recordId.innerHTML = 'test.personfinder.google.org/person.' + fname.toUpperCase() + lname.toUpperCase();
+	recordId.innerHTML = 'testkey.personfinder.google.org/person.' + fname.toUpperCase() + lname.toUpperCase();
 	person.appendChild(recordId);
 
 	const authorName = Pfif.createElement('pfif:author_name');
@@ -59,11 +60,11 @@ function createPfif(e) {
 	const note = Pfif.createElement('pfif:note');
 
 	const noteId = Pfif.createElement('pfif:note_record_id');
-	noteId.innerHTML = 'test.personfinder.google.org/note.' + lname + timeRegistration;
+	noteId.innerHTML = 'testkey.personfinder.google.org/note.' + lname + timeRegistration;
 	note.appendChild(noteId);
 
 	const persNoteId = Pfif.createElement('pfif:person_record_id');
-	persNoteId.innerHTML = 'test.personfinder.google.org/person.' + fname.toUpperCase() + lname.toUpperCase();
+	persNoteId.innerHTML = 'testkey.personfinder.google.org/person.' + fname.toUpperCase() + lname.toUpperCase();
 	note.appendChild(persNoteId);
 
 	const authorNameNote = Pfif.createElement('pfif:author_name');
@@ -84,15 +85,18 @@ function createPfif(e) {
 
 	person.appendChild(note);
 	header.appendChild(person);
-
+	Pfif.appendChild(header);
+	console.log(Pfif);
 	sendToServer(Pfif);
 }
 
 function sendToServer(Pfif) {
+	const serializer = new XMLSerializer();
+	const xmlString = serializer.serializeToString(Pfif);
 	const xhr = new XMLHttpRequest();
-	xhr.open('POST', 'https://www.google.org/personfinder/test/api/write?key=43HxMWGBijFaYEr5', true);
-	xhr.setRequestHeader('Content-Type', 'application/xml');
-	xhr.send(Pfif);
+	xhr.open('POST', '../app/models/testPfif.php', true);
+	xhr.setRequestHeader('Content-Type', 'text/xml');
+	xhr.send(xmlString);
 	console.log('sent');
 	formular.reset();
 }
