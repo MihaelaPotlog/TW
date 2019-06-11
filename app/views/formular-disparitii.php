@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CriC Missing Persons</title>
     <link href="css/formular-disparitii.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-            <ul class="navList">
-                    <li><img id="logo" src ="img/logo.png" alt="offf:( logo" /></li>
-                    <li id="out" style="float:right"><a href="crisismap"><img id="logout" src= "img/logout.png" alt="offf:( logout" /></a></li>
-                    <li id="home" style="float:right"><a href="Autoritati">Home</a></li>
-                    <li id="missing" style="float:right"><a href="">Missing persons</a></li>            
-                </ul>
+    <ul class="navList">
+        <li><img id="logo" src="img/logo.png" alt="offf:( logo" /></li>
+        <li id="out" style="float:right"><a href="crisismap"><img id="logout" src="img/logout.png" alt="offf:( logout" /></a></li>
+        <li id="home" style="float:right"><a href="Autoritati">Home</a></li>
+        <li id="missing" style="float:right"><a href="">Missing persons</a></li>
+    </ul>
 
     <div class="form-box">
-    
-        <form class="form-inline" action="">
+
+        <form class="form-inline" id="formularPF" action="">
             <p>Missing person registration</p>
             <label for="pic"> Upload picture of missing person</label>
             <input type="file" id="pic" name="pic" accept="image/*">
@@ -27,7 +29,7 @@
             <input type="text" id="lname" name="lastname" placeholder="Enter last name">
             <br>
             <label for="gender"> Gender of missing person </label>
-            <select name="gender">
+            <select name="gender" id="gender">
                 <option value="Male"> Male </option>
                 <option value="Female"> Female </option>
             </select>
@@ -50,16 +52,18 @@
             <label for="your-name"> Name of complainant </label>
             <input type="text" id="your-name" name="yourname" placeholder="Enter your name">
             <br>
-            <label for="contact">Name, address, mobile numbers of relatives of missing person</label> 
-            <textarea id="contact" name="contact"></textarea>
+            <label for="contact">address missing person</label>
+            <textarea id="contact" name="adress"></textarea>
             <br>
+
+
             <label for="extra"> Extra information </label>
             <textarea id="extra" name="extra"></textarea>
             <br>
             <button type="submit">Submit</button>
         </form>
     </div>
-
+    <script src="../app/controllers/createPfif.js"></script>
 </body>
-</html>
 
+</html>
