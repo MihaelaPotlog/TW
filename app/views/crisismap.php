@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -63,10 +66,10 @@
     </div>
 
     <div id='allAlerts' class='allAlerts'>
-        <div id='fire' class='alerts'><a href="formularAlerte?tipalerta=FIRE"><img src='img/fire.png' alt="fire icon"></a></div>
-        <div id='person' class='alerts'><a href="formularAlerte?tipalerta=TORNADO"><img src='img/person.png' alt="person icon"></a></div>
-        <div id='inundation' class='alerts'><a href="formularAlerte?tipalerta=INUNDATION"><img src='img/inundation.png' alt="inundation icon"></a></div>
-        <div id='earthquake' class='alerts'><a href="formularAlerte?tipalerta=EARTHQUAKE"><img src='img/earthquake.png' alt="earth icon"></a></div>
+        <div id='fire' class='alerts'><a href="formularAlerte.php?tipalerta=FIRE"><img src='img/fire.png' alt="fire icon"></a></div>
+        <div id='person' class='alerts'><a href="formularAlerte.php?tipalerta=TORNADO"><img src='img/person.png' alt="person icon"></a></div>
+        <div id='inundation' class='alerts'><a href="formularAlerte.php?tipalerta=INUNDATION"><img src='img/inundation.png' alt="inundation icon"></a></div>
+        <div id='earthquake' class='alerts'><a href="formularAlerte.php?tipalerta=EARTHQUAKE"><img src='img/earthquake.png' alt="earth icon"></a></div>
     </div>
     <div id='status' class='status'>
         <p class='status' id='safeDanger'>You are safe ! </p>
@@ -84,7 +87,7 @@
 
                 <option value='all'>All</option>
                 <option value='FIRE'>Fire</option>
-                <option value='PERSON'>Persons</option>
+                <option value='TORNADO'>Tornado</option>
                 <option value='INUNDATION'>Inundations</option>
                 <option value='EARTHQUAKE'>Earthquakes</option>
             </select>
