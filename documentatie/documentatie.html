@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CriC-Documentation</title>
+    <link rel="stylesheet" href="documentatie.css">
+</head>
+<body>
+  <header><h1 id="titlu">Crisis Containment Service</h1></header>
+  <div>
+      <section typeof="sa:AuthorsList">
+          <h2>Contribuitors:</h2>
+          <ul>
+              <li typeof="sa:ContributorRole" property="schema:contributor">George Amarandei</li>
+              <li typeof="sa:ContributorRole" property="schema:contributor">Mihaela Potlog</li>
+              <li typeof="sa:ContributorRole" property="schema:contributor">Mihnea Volcovinski</li>
+          </ul>
+
+      </section>
+  </div>
+  <section>
+      <h2>Table of Content</h2>
+    <ol>
+        <li>About</li>
+        <li>User scenarios</li>
+        <li>Used technologies, APIs and web services</li>
+        <li>The adopted arhitecture (MVC)</li>
+        <li>The division into functional modules</li>
+        <li>Used database</li>
+    </ol>
+  </section>
+
+    <section>
+        <h2>CriC</h2>
+        <p>Cric is a web platform that allows emergency management (eg earthquakes, fires, floods, etc.) by authorities
+            or organizations.</p>
+    </section>
+
+    <figure typeof="sa:image">
+        <img typeof="sa:image" src="usecase.png" alt="usecase" />
+        <figcaption>Use Case Diagram</figcaption>
+    </figure>
+    <section>
+        <h2> Users</h2>
+        <p>A regular user, after giving his permission to be located,
+        will be able to send alerts and eventual details, view his
+        status and guidance in case of emergencies, and to view
+        information about disasters in his area/from everywhere.
+        He can also interact with the map. A regular user can
+            add/view information about missing/found persons.</p>
+    </section>
+
+    <section>
+        <h2>Authorities</h2>
+        <p>An authorized person has the same possibilities as a regular user, plus, can manage all the data about emergencies: after logging in he can view information about
+            new or on going alerts and accept/reject/update the new
+            ones.
+        </p>
+    </section>
+
+    <section>
+        <h2>Technologies, API’s and Web services</h2>
+        <h2>Languages</h2>
+        <p>JavaScript, PHP</p>
+        <section>
+            <h2 aria-level="2">Public APIs and Web services</h2>
+
+            <dl>
+                <dt><strong>Google Fusion Table</strong></dt>
+                <dd> Manage the information about alerts in real time</dd>
+
+                <dt><strong>Crisis Map</strong></dt>
+                <dd>Shows information about alerts and shelters on map.</dd>
+
+                <dt><strong>Google Person Finder</strong></dt>
+                 <dd>Stores and exports data about people missing / found in PFIF (XML) format.</dd>
+
+                <dt><strong>Geolocation API</strong></dt>
+                 <dd>It will return the latitude / longitude, with the user’s
+                  prior consent. Location is required to notify users in a
+                 particular area of an ongoing danger.</dd>
+
+                <dt><strong>Map JavaScript API</strong></dt>
+                 <dd>Allows customization of the map using the fusion table: adding layers, adding markers in the Crisis Map</dd>
+                <dt><strong>Common Alert Potocol</strong></dt>
+                 <dd>CAP is an XML-based data format for exchanging
+                  public warnings and emergencies between alerting technologies.</dd>
+            </dl>
+        </section>
+    </section>
+
+    <section>
+       <h2> Model View Controller</h2>
+        <figure>
+            <img src="mvc.png" alt="mvc"/>
+            <figcaption>MVC Diagram</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2>Modules</h2>
+        <figure>
+            <img src="module.jpg" alt="modules Diagram"/>
+            <figcaption>Modules Diagram</figcaption>
+        </figure>
+    </section>
+
+    <section>
+        <h2> Used data base</h2>
+        <p>This data base stores the username and the password in
+            order to manage the login of the authorities.</p>
+        <figure>
+            <img src="db.jpg" alt="database"/>
+            <figcaption>Login Information Table</figcaption>
+        </figure>
+    </section>
+</body>
+</html>
